@@ -33,26 +33,24 @@ def agregar_libro(biblioteca):
                 copias = int(copias)
                 prestamos = int(prestamos)
 
-                if copias > 0:
-                    disponibilidad = True
-                else:
-                    disponibilidad = False
+                disponibilidad =  copias > 0
+    
             
                 
-                libros = {
+                libro = {
                     "titulo": titulo,
                     "copias": copias,
                     "prestamos": prestamos,
                     "disponibilidad": disponibilidad
                 }
-                biblioteca.append(libros)
+                biblioteca.append(libro)
                 print("Libro agregado correctamente.")
                 
 
             else:
-                print("Error: el numero de prestamos debe ser mayor a 0")
+                print("Error: debe ingresar un numero mayor a 0")
         else:
-            print("Error: el numero de copias NO deben ser negativas.")
+            print("Error: debe ingresar un numero mayor o igual a 0")
     else:
         print("Error: el titulo no puede estar vacio.")           
 
@@ -108,10 +106,10 @@ def mostrar_libros(biblioteca):
             estado = "SIN COPIAS"
 
         print(f"""
-              Titulo = {i['titulo']}
-              Copias = {i['copias']}
-              Prestamos = {i['prestamos']}
-              Estado = {estado}
+              Titulo: {i['titulo']}
+              Copias: {i['copias']}
+              Prestamos: {i['prestamos']}
+              Estado: {estado}
               *********************************""")
                     
 
